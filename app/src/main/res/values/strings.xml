@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">revision2</string>
+    <string name="title">Formulation</string>
+    <string name="nom">nom:</string>
+    <string name="prenom">prénom:</string>
+    <string name="email">email:</string>
+    <string name="Vider">Vider</string>
+    <string name="enregistre">Enregistre</string>
+    <string name="footer">\@EPSIEL</string>
+    <string name="Recap">Recap</string>
+    <string name="nomprenom">Nom:</string>
+    <string name="prénom">Prénom:</string>
+    <string name="mail">Email:</string>
+</resources>
