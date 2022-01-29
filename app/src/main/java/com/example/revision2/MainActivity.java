@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.jar.Attributes;
-
 public class MainActivity extends AppCompatActivity {
     private TextView name;
     private TextView firstname;
@@ -22,20 +20,20 @@ public class MainActivity extends AppCompatActivity {
 
         name=findViewById(R.id.name);
 
-        firstname=findViewById(R.id.prenom);
+        firstname=findViewById(R.id.firtname);
 
         mail=findViewById(R.id.mail);
 
-        String Name=getIntent().getStringExtra(" my name");
+        String Name=getIntent().getStringExtra(" myname");
 
-        String Firstname=getIntent().getStringExtra("firstname");
+        String Firstname=getIntent().getStringExtra("prenom");
 
         String Mail=getIntent().getStringExtra("email");
 
-       name.setText(Name);
+        name.setText(Name);
 
-       firstname.setText(Firstname);
-
+        firstname.setText(Firstname);
+        
         mail.setText(Mail);
 
        }

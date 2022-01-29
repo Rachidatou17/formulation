@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class RecapActivity extends AppCompatActivity {
     private EditText nom;
-    private EditText prenom;
+    private EditText Prenom;
     private EditText email;
     private Button vider;
     private Button enregistre;
@@ -22,7 +22,7 @@ public class RecapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recap);
 
         nom=findViewById(R.id.Nom);
-        prenom=findViewById(R.id.prenom);
+        Prenom=findViewById(R.id.Prenom);
         email=findViewById(R.id.email);
         vider=findViewById(R.id.Vider);
         enregistre=findViewById(R.id.enregistre);
@@ -30,29 +30,44 @@ public class RecapActivity extends AppCompatActivity {
 
     public void onclick(View view) {
 
-        Toast.makeText(this, "les champs saisi sont vide", Toast.LENGTH_SHORT).show();
+        nom.setText("");
+        Prenom.setText("");
+        email.setText("");
 
-        Intent intent=new Intent(this,RecapActivity.class);
-
-        startActivity(intent);
     }
 
     public void onregister(View view) {
-        String name=nom.getText().toString();
+        String namevalue=nom.getText().toString();
 
-        String firstname=prenom.getText().toString();
+        String prenomvalue=Prenom.getText().toString();
 
-        String mail=email.getText().toString();
+        String mailvalue=email.getText().toString();
+
+        if(namevalue.equals("")){
+            nom.setError(" le nom est obligatoire");
+            nom.requestFocus();
+            return;
+        }
+        if(prenomvalue.equals("")){
+            Prenom.setError("le prenom est obligatoire");
+            Prenom.requestFocus();
+            return;
+        }
+        if(mailvalue.equals("")){
+            email.setError("l'email est obligatoire");
+            email.requestFocus();
+            return;
+        }
 
         Toast.makeText(this, "Vous êtes enregistrer", Toast.LENGTH_SHORT).show();
 
         Intent intent=new Intent(this,MainActivity.class);
 
-        intent.putExtra(" my name",name);
+        intent.putExtra( " myname",namevalue);
 
-        intent.putExtra("firstname",firstname);
+        intent.putExtra("prenom",prenomvalue);
 
-        intent.putExtra("email",mail);
+        intent.putExtra("email",mailvalue);
 
         startActivity(intent);
     }
